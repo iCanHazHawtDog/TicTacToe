@@ -1,0 +1,8 @@
+edu.luc.tictactoe.application
+edu.luc.tictactoe.businesslogic
+edu.luc.tictactoe.businesslogic.implementation
+edu.luc.tictactoe.dao
+edu.luc.tictactoe.gui.controller
+edu.luc.tictactoe.gui.view
+edu.luc.tictactoe.networking
+edu.luc.tictactoetest.businesslogictest
