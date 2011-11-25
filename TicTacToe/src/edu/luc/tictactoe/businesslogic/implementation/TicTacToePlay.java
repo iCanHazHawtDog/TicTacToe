@@ -3,6 +3,7 @@ package edu.luc.tictactoe.businesslogic.implementation;
 import java.util.Random;
 import edu.luc.tictactoe.businesslogic.IBoard;
 import edu.luc.tictactoe.businesslogic.IPlayer;
+import edu.luc.tictactoe.businesslogic.ITicTacToePlay;
 import edu.luc.tictactoe.dao.DBInteraction;
 import edu.luc.tictactoe.gui.controller.MainBoard;
 import edu.luc.tictactoe.networking.INetworking;
@@ -14,10 +15,10 @@ import edu.luc.tictactoe.networking.INetworking;
  * All moves are done in this class, we retrieve the scores, set them, return wins, draws etc..
  *
  */
-public class TicTacToePlay {
+public abstract class TicTacToePlay implements ITicTacToePlay{
 	private IBoard board;
-	private IPlayer playerOne;
-	private IPlayer playerTwo;
+	public IPlayer playerOne;
+	public IPlayer playerTwo;
 	private IPlayer playerTurn;
 	private IPlayer nextPlayerTurn;
 	
@@ -43,14 +44,16 @@ public class TicTacToePlay {
 	
 	/**
 	 * Randomly selects who turn it is
+	 * @return 
 	 * 
 	 */
-	public void randomStart(){
+	public IPlayer randomStart(){
 		Random random = new Random();
 		if(random.nextInt() % 2 == 0)
 			playerTurn = playerOne;
 		else
 			playerTurn = playerTwo;
+		return playerTurn;
 	}
 	
 	/**
@@ -87,7 +90,7 @@ public class TicTacToePlay {
 	}
 	
 	/**
-	 * Retunrs the second IPlayer
+	 * Returns the second IPlayer
 	 * 
 	 * @return IPlayer
 	 */
@@ -151,7 +154,7 @@ public class TicTacToePlay {
 	 * Switches the IPlayers
 	 * 
 	 */
-	private void switchPlayer(){
+	public void switchPlayer(){
 		if(playerTurn == playerOne)
 			playerTurn = playerTwo;
 		else
@@ -159,7 +162,7 @@ public class TicTacToePlay {
 	}
 	
 	/**
-	 * Resets tbe board
+	 * Resets the board
 	 * 
 	 */
 	public void resetBoard(){
