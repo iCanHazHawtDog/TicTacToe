@@ -16,10 +16,10 @@ import edu.luc.tictactoe.networking.INetworking;
  *
  */
 public abstract class TicTacToePlay implements ITicTacToePlay{
-	private IBoard board;
+	protected IBoard board;
 	public IPlayer playerOne;
 	public IPlayer playerTwo;
-	private IPlayer playerTurn;
+	protected IPlayer playerTurn;
 	private IPlayer nextPlayerTurn;
 	
 	/**
@@ -29,15 +29,10 @@ public abstract class TicTacToePlay implements ITicTacToePlay{
 	 * 
 	 * @param gameType
 	 */
-	public TicTacToePlay(GameType gameType){
-		
+	public TicTacToePlay(){
 		this.board = new Board();
 		this.playerOne = new Person();
-		if(gameType == GameType.WithComputer){
-			this.playerTwo = new Computer();
-		}else{
-			this.playerTwo = new Person();
-		} 
+		this.playerTwo = new Person();
 		randomStart();
 		nextPlayerTurn = (playerTurn.equals(playerOne)) ? playerTwo : playerOne;  
 	}
@@ -61,9 +56,8 @@ public abstract class TicTacToePlay implements ITicTacToePlay{
 	 * 
 	 * @param name
 	 */
-	public void setPlayerOne(String name){
+	public void setupPlayerOne(String name){
 		org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(edu.luc.tictactoe.gui.controller.TicTacToeUIApp.class).getContext().getResourceMap(MainBoard.class);
-		
 		playerOne.setName(name);
 		playerOne.setIcon(resourceMap.getIcon("xIcon.icon"));
 	}
@@ -73,7 +67,7 @@ public abstract class TicTacToePlay implements ITicTacToePlay{
 	 * 
 	 * @param name
 	 */
-	public void setPlayerTwo(String name){
+	public void setupPlayerTwo(String name){
 		org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(edu.luc.tictactoe.gui.controller.TicTacToeUIApp.class).getContext().getResourceMap(MainBoard.class);
 
 		playerTwo.setName(name);

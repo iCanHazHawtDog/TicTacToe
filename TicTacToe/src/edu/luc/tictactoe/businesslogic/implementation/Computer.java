@@ -9,41 +9,50 @@ import edu.luc.tictactoe.businesslogic.IBoard;
  */
 public class Computer extends Player {
 
-	int levelOfDifficulty;
-	int compWin;
-	/**
-	 * Initializing constructor with the base class
-	 */
-	public Computer ()
-	{
-		super("");
-	}
-
-	public int getLevelOfDifficulty()
+	DifficultyLevel levelOfDifficulty;
+	
+	public DifficultyLevel getLevelOfDifficulty()
 	{
 		return levelOfDifficulty;
 	}
 	
-	public void incrementDifficultylevel()
-	{
-			levelOfDifficulty++;
+	public void setDifficultyLevel(DifficultyLevel difficultyLevel){
+		this.levelOfDifficulty = difficultyLevel;
 	}
 	
-	public void setLevelOfDifficulty(int newLevelOfDifficulty)
+	public SelectionResult selectPosition(IBoard board)
 	{
-		levelOfDifficulty = newLevelOfDifficulty;
+		if(levelOfDifficulty == DifficultyLevel.Easy)
+			return randomSelection(board);
+		if(levelOfDifficulty == DifficultyLevel.Medium)
+			return dontLetPlayerWin(board);
+		if(levelOfDifficulty == DifficultyLevel.Hard)
+			return smartSelection(board);
+		return null;
 	}
 	
+	public SelectionResult randomSelection(IBoard board){
+		//Todo Akrem, Omo, Subash
+		return SelectionResult.Draw;
+	}
+	
+	public SelectionResult dontLetPlayerWin(IBoard board){
+		return null;
+	}
+	
+	public SelectionResult smartSelection(IBoard board){
+		return null;
+	}
+
+	@Override
 	public void setWins(int wins) {
-		this.wins = wins;
+		// TODO Auto-generated method stub
+		
 	}
-	
+
+	@Override
 	public void setNumberOfPlays(int plays) {
-		numberOfPlays = plays;		
-	}	
-	
-	public int choosePosition (IBoard board)
-	{
-		return 0;		
-	}	
+		// TODO Auto-generated method stub
+		
+	}
 }
