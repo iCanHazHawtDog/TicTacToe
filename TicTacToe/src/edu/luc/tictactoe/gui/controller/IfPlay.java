@@ -13,6 +13,7 @@ package edu.luc.tictactoe.gui.controller;
 import javax.swing.JFrame;
 
 import edu.luc.tictactoe.application.MainApplication;
+import edu.luc.tictactoe.businesslogic.implementation.Factory;
 import edu.luc.tictactoe.businesslogic.implementation.GameType;
 import edu.luc.tictactoe.businesslogic.implementation.TicTacToePlay;
 
@@ -156,8 +157,8 @@ private void otmBtnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
     String player1NameString= player1Name.getText();
     if(!(player1NameString.isEmpty())){
        
-    	MainApplication.ticTacToePlay = new TicTacToePlay(GameType.WithAnotherPersonInSameComputer);
-    	MainApplication.ticTacToePlay.setPlayerOne(player1NameString);
+    	MainApplication.ticTacToePlay = Factory.CreateTicTacToePlay(GameType.WithAnotherPersonInSameComputer);
+    	MainApplication.ticTacToePlay.setupPlayerOne(player1NameString);
     	
        IfOTM ifOtm= new IfOTM();
        JFrame mainFrame = TicTacToeUIApp.getApplication().getMainFrame();
@@ -195,8 +196,8 @@ private void nbBtnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:even
 	String player1NameString= player1Name.getText();
 	if(!(player1NameString.isEmpty())){
 	
-		MainApplication.ticTacToePlay = new TicTacToePlay(GameType.WithAnotherPersonInNetwork);
-    	MainApplication.ticTacToePlay.setPlayerOne(player1NameString);
+		MainApplication.ticTacToePlay = Factory.CreateTicTacToePlay(GameType.WithAnotherPersonInNetwork);
+    	MainApplication.ticTacToePlay.setupPlayerOne(player1NameString);
     	
 		IfNetworkBased ifNetworkBased= new IfNetworkBased();
 	    JFrame mainFrame= TicTacToeUIApp.getApplication().getMainFrame();

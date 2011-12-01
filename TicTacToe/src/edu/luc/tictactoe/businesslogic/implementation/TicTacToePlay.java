@@ -15,7 +15,7 @@ import edu.luc.tictactoe.networking.INetworking;
  * All moves are done in this class, we retrieve the scores, set them, return wins, draws etc..
  *
  */
-public abstract class TicTacToePlay implements ITicTacToePlay{
+public class TicTacToePlay implements ITicTacToePlay{
 	protected IBoard board;
 	public IPlayer playerOne;
 	public IPlayer playerTwo;
@@ -162,17 +162,7 @@ public abstract class TicTacToePlay implements ITicTacToePlay{
 	public void resetBoard(){
 		board.resetBoard();
 	}
-	
-	/**
-	 * Sets the number of games that have been played for both the players
-	 * 
-	 * @param plays
-	 */
-	public void setNumberOfPlays(int plays){
-		playerOne.setNumberOfPlays(plays);
-		playerTwo.setNumberOfPlays(plays);
-	}
-	
+		
 	/**
 	 * stores players (only person) scores to Database
 	 */
@@ -185,5 +175,6 @@ public abstract class TicTacToePlay implements ITicTacToePlay{
 			dbInter.registerUser(playerTwo);
 		}
 	}
+
 	
 }

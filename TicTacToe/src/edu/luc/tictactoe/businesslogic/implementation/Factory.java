@@ -4,12 +4,13 @@ import edu.luc.tictactoe.businesslogic.ITicTacToePlay;
 
 public class Factory {
 
-	public ITicTacToePlay CreateTicTacToePlay(GameType gameType){
+	public static ITicTacToePlay CreateTicTacToePlay(GameType gameType){
 		if(gameType == GameType.WithAnotherPersonInSameComputer)
 			return new TicTacToePlay();
-		if(gameType = GameType.WithComputer)
+		if(gameType == GameType.WithComputer)
 			return new TicTacToeWithComputer();
-		if(gameType = GameType.WithAnotherPersonInNetwork)
+		if(gameType == GameType.WithAnotherPersonInNetwork)
 			return new TicTacToeNetworking();
+		return null;
 	}
 }

@@ -12,13 +12,27 @@ public class TicTacToeWithComputer extends TicTacToePlay{
 		randomStart();
 		board = new Board();
 		if(playerTurn == playerTwo)
-			((Computer)playerTwo).selectPosition(board);
+			((Computer)playerTwo).selectPosition(board, levelOfDifficulty);
 	}
 
+	DifficultyLevel levelOfDifficulty = DifficultyLevel.Medium;
+	
+	public DifficultyLevel getLevelOfDifficulty()
+	{
+		return levelOfDifficulty;
+	}
+	
+	public void setDifficultyLevel(DifficultyLevel difficultyLevel){
+		this.levelOfDifficulty = difficultyLevel;
+	}
+	
 	@Override
-	public boolean setPosition(int i, int j) {
-		// TODO Auto-generated method stub
-		return false;
+	public void switchPlayer(){
+		super.switchPlayer();
+		// if it's the computer turn, the computer needs to make a selection.
+		if(playerTurn == playerTwo)
+			((Computer)playerTwo).selectPosition(board, levelOfDifficulty);
+			
 	}
 
 }

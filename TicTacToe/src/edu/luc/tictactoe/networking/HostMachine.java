@@ -176,7 +176,7 @@ public class HostMachine implements Runnable, INetworking{
 			//The name of the client being set on the host machine
 			String name=message.substring(11,message.length());
 			print("Setting the name of player2 to: "+name);
-			MainApplication.ticTacToePlay.setPlayerTwo(name);
+			MainApplication.ticTacToePlay.setupPlayerTwo(name);
 			uiBridge.updateNames(name);
 			returnMessage="gotNameClient";
 		}

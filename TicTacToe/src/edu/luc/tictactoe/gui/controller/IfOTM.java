@@ -152,7 +152,7 @@ public class IfOTM extends javax.swing.JFrame {
     String player2NameString= player2Name.getText();
     if(!(player2NameString.isEmpty())){
     	
-       MainApplication.ticTacToePlay.setPlayerTwo(player2NameString);
+       MainApplication.ticTacToePlay.setupPlayerTwo(player2NameString);
     	
        MainBoard mainBoard= new MainBoard();
        JFrame mainFrame = TicTacToeUIApp.getApplication().getMainFrame();

@@ -18,6 +18,4 @@ public interface IPlayer {
 	public int getWins();
 	public void setIcon(Icon icon);
 	public Icon getIcon();
-	public void setWins(int wins);
-	public void setNumberOfPlays(int plays);
 }

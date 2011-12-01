@@ -13,7 +13,7 @@ import edu.luc.tictactoe.businesslogic.IPlayer;
  *
  */
 
-public  abstract class Player implements IPlayer {
+public  class Player implements IPlayer {
 	 protected String playername; 
      public int numberOfPlays;    
      public int wins;

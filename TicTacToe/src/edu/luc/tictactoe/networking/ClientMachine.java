@@ -209,7 +209,7 @@ public class ClientMachine implements Runnable, INetworking{
 				print("Setting the name of player 2 to: "+name);
 				//Set the playerTwo name to the name of the host player. We are only using the instance of ticTacToePlay on the client machine
 				//to keep track of the names.
-				MainApplication.ticTacToePlay.setPlayerTwo(name);
+				MainApplication.ticTacToePlay.setupPlayerTwo(name);
 				//Update the UI to the correct names of both parties
 				uiBridge.updateNames(name);
 				//Return to the host that the client has received the name
