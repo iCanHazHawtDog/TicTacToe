@@ -852,7 +852,7 @@ public class MainBoard extends javax.swing.JFrame {
 			MainApplication.ticTacToePlay.getPlayerOne().incrementNumberOfPlays();
 		}
 
-		MainApplication.ticTacToePlay.setNumberOfPlays(MainApplication.ticTacToePlay.getPlayerOne().getNumberOfPlays()+1);
+		//MainApplication.ticTacToePlay.setNumberOfPlays(MainApplication.ticTacToePlay.getPlayerOne().getNumberOfPlays()+1);
 		resultsWindow= new ResultWindow(this, isNetwork, network);
 		
 		resultsWindow.setLocationRelativeTo(null);
