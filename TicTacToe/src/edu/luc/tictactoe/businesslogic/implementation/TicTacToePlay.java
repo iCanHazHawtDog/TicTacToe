@@ -21,6 +21,8 @@ public class TicTacToePlay implements ITicTacToePlay{
 	public IPlayer playerTwo;
 	protected IPlayer playerTurn;
 	private IPlayer nextPlayerTurn;
+	protected IPlayer winner;
+	
 	
 	/**
 	 * Constructor for the TicTacToePlay- takes in the gameType
@@ -110,7 +112,7 @@ public class TicTacToePlay implements ITicTacToePlay{
 	 * @param j
 	 * @return SelectionResult
 	 */
-	public SelectionResult selectPosition(int i, int j){
+	public void selectPosition(int i, int j){
 		board.selectPosition(playerTurn, i, j);
 		boolean won = board.checkWin(playerTurn);
 		
@@ -119,20 +121,23 @@ public class TicTacToePlay implements ITicTacToePlay{
 			playerTwo.incrementNumberOfPlays();
 			playerTurn.incrementNumberOfWins();
 			board.resetBoard();
+			UIChanges.DisplayResult(SelectionResult.Win, playerOne, playerTwo, playerTurn);
 			setNextTurnPlayer();
-			return SelectionResult.Win;
 		}
 			
 		if(board.isFull()){
 			playerOne.incrementNumberOfPlays();
 			playerTwo.incrementNumberOfPlays();
 			board.resetBoard();
+			UIChanges.DisplayResult(SelectionResult.Draw, playerOne, playerTwo);
 			setNextTurnPlayer();
-			return SelectionResult.Draw;
 		}
 		
 		switchPlayer();
-		return SelectionResult.Continue;
+	}
+	
+	public void selectPosition(Pair<Integer, Integer> pair){
+		selectPosition(pair.getKey(), pair.getValue());
 	}
 	
 	/**
@@ -174,6 +179,14 @@ public class TicTacToePlay implements ITicTacToePlay{
 		if(playerTwo instanceof Person){
 			dbInter.registerUser(playerTwo);
 		}
+	}
+	
+	public IPlayer getGameWinner(){
+		if(playerOne.getWins() > playerTwo.getWins())
+			return playerOne;
+		else if(playerTwo.getWins() > playerOne.getWins())
+			return playerTwo;
+		return null;
 	}
 
 	

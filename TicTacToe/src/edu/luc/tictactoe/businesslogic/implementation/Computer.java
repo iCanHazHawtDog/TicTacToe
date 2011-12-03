@@ -1,6 +1,9 @@
 package edu.luc.tictactoe.businesslogic.implementation;
 
+import java.security.KeyPair;
+
 import edu.luc.tictactoe.businesslogic.IBoard;
+import edu.luc.tictactoe.businesslogic.ISelectionStrategy;
 
 /**
  * This subclass is for the implementation of the Computer TicTacToe player
@@ -8,23 +11,25 @@ import edu.luc.tictactoe.businesslogic.IBoard;
  * 
  */
 public class Computer extends Player {
-	public void selectPosition(IBoard board, DifficultyLevel difficultyLevel)
-	{
+	
+	private ISelectionStrategy selectionStrategy;
+	private IBoard board;
+	
+	public Computer(IBoard board, DifficultyLevel difficultyLevel){
+		this.board = board;
+		setSelectionStrategy(difficultyLevel);
+	}
+	
+	public void setSelectionStrategy(DifficultyLevel difficultyLevel){
 		if(difficultyLevel == DifficultyLevel.Easy)
-			randomSelection(board);
+			this.selectionStrategy = new RandomSelection();
 		if(difficultyLevel == DifficultyLevel.Hard)
-			smartSelection(board);
+			this.selectionStrategy = new SmartSelection();
 		else
-			dontLetPlayerWin(board);
+			this.selectionStrategy = new AdvancedSelection();
 	}
 	
-	public void randomSelection(IBoard board){
-		//Todo Akrem, Omo, Subash
-	}
-	
-	public void dontLetPlayerWin(IBoard board){
-	}
-	
-	public void smartSelection(IBoard board){
+	public Pair<Integer, Integer> selectPosition(){
+		return selectionStrategy.execute(board);
 	}
 }

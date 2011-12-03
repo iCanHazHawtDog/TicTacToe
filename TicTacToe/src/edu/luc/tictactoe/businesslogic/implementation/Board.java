@@ -1,9 +1,12 @@
 package edu.luc.tictactoe.businesslogic.implementation;
 
 /**
- * @author Akrem Osmanm, Matt Kemnetz
+ * @author Akrem Osman, Matt Kemnetz
  * 
  */
+
+import java.awt.List;
+import java.util.Map;
 
 import edu.luc.tictactoe.businesslogic.IBoard;
 import edu.luc.tictactoe.businesslogic.IPlayer;
@@ -132,6 +135,15 @@ public class Board implements IBoard {
 				if(playersPositions[i][j]!=null) counter++;
 		
 		return counter;
+	}
+	
+	public Map<Integer, Integer> NotSelectedPositions(){
+		Map<Integer, Integer> positions = new Map<Integer, Integer>();       
+		for(int i=0;i<3;i++)
+			for(int j=0;j<3;j++)
+				if(!isSelected(i, j)) 
+					positions.put(i, j);
+		
 	}
 	
 }
