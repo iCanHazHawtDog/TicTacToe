@@ -132,25 +132,6 @@ public class DBInteraction{
 		return p;
 	}
 	
-	/*
-	 * The following code segment, which is commented out provides proof of concept that getting and setting
-	 * high scores work
-	public static void main(String[] args)
-	{
-		DBInteraction dbInter = new DBInteraction();
-		
-		IPlayer[] players = dbInter.getHighestScorers(10);
-		System.out.println(players[9].getName());
-		System.out.println(players[9].getWins());
-		System.out.println(players[9].getNumberOfPlays());
-		
-		Person p = new Person();
-		p.setName("Subash");
-		p.setWins(14);
-		p.setNumberOfPlays(34);
-		dbInter.registerUsers(p);
-	}*/
-
 }
 	
 
