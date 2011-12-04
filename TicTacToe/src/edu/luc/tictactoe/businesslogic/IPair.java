@@ -1,5 +1,11 @@
 package edu.luc.tictactoe.businesslogic;
-
+/**
+ * 
+ * @author Subhash
+ *
+ * @param <K>
+ * @param <V>
+ */
 public interface IPair<K, V> {
 
 	public abstract K getKey();
