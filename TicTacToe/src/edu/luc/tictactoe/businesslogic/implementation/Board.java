@@ -6,10 +6,13 @@ package edu.luc.tictactoe.businesslogic.implementation;
  */
 
 import java.awt.List;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 import edu.luc.tictactoe.businesslogic.IBoard;
+import edu.luc.tictactoe.businesslogic.IPair;
 import edu.luc.tictactoe.businesslogic.IPlayer;
 
 /**
@@ -138,14 +141,14 @@ public class Board implements IBoard {
 		return counter;
 	}
 	
-	public Map<Integer, Integer> NotSelectedPositions(){
-		Map<Integer, Integer> positions = new HashMap<Integer, Integer>();       
+	public ArrayList<IPair> NotSelectedPositions(){
+		//Map<Integer, Integer> positions = new HashMap<Integer, Integer>();
+		ArrayList positions = new ArrayList();
 		for(int i=0;i<3;i++)
 			for(int j=0;j<3;j++)
-				if(!isSelected(i, j)) 
-					positions.put(i, j);
+				if(!isSelected(i, j))
+					positions.add(new Pair(i, j));
+			
 		return positions;
-		
 	}
-	
 }

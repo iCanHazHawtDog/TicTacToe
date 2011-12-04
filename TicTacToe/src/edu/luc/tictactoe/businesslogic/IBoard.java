@@ -1,5 +1,8 @@
 package edu.luc.tictactoe.businesslogic;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 /***
  * @author Akrem Osman
  * 
@@ -11,4 +14,5 @@ public interface IBoard {
 	public boolean selectPosition(IPlayer player, int i, int j);
 	public boolean checkWin(IPlayer player);
 	public boolean resetBoard();
+	public ArrayList<IPair> NotSelectedPositions();
 }
