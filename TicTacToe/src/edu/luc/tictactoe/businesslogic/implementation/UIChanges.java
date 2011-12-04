@@ -1,5 +1,9 @@
 package edu.luc.tictactoe.businesslogic.implementation;
 
+/**
+ * @author Akrem Osman, Subhash Pant
+ * Class has two static methods which pushes the changes to the UI
+ */
 import edu.luc.tictactoe.businesslogic.IPlayer;
 
 public class UIChanges {
