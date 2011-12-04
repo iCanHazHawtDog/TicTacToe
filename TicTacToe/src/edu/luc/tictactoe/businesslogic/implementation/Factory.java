@@ -11,7 +11,7 @@ public class Factory {
 
 	/*
 	 * @param GameType
-	 * @return Class to initalize
+	 * @return Class to initialize
 	 */
 	public static ITicTacToePlay CreateTicTacToePlay(GameType gameType)
 		throws IOException, ClassNotFoundException
