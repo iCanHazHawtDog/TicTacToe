@@ -3,6 +3,7 @@ package edu.luc.tictactoe.businesslogic.implementation;
 
 import java.util.Random;
 import edu.luc.tictactoe.businesslogic.IBoard;
+import edu.luc.tictactoe.businesslogic.IPair;
 import edu.luc.tictactoe.businesslogic.IPlayer;
 import edu.luc.tictactoe.businesslogic.ITicTacToePlay;
 import edu.luc.tictactoe.dao.DBInteraction;

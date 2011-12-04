@@ -3,6 +3,7 @@ package edu.luc.tictactoe.businesslogic.implementation;
 import java.security.KeyPair;
 
 import edu.luc.tictactoe.businesslogic.IBoard;
+import edu.luc.tictactoe.businesslogic.IPair;
 import edu.luc.tictactoe.businesslogic.ISelectionStrategy;
 
 /**
