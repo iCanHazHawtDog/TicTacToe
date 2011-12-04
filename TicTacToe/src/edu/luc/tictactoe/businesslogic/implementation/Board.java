@@ -11,6 +11,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import junit.framework.Assert;
+
+import org.junit.Test;
+
 import edu.luc.tictactoe.businesslogic.IBoard;
 import edu.luc.tictactoe.businesslogic.IPair;
 import edu.luc.tictactoe.businesslogic.IPlayer;
@@ -150,5 +154,79 @@ public class Board implements IBoard {
 					positions.add(new Pair(i, j));
 			
 		return positions;
+	}
+	
+	public IPair otherPlayerWouldNotWinIfSelected(IPlayer player){
+		
+		int numberOfMatches = 0;
+		IPair notSelected = null;
+		
+		for(int i=0;i<3;i++){
+			for(int j=0;j<3;j++){
+				if(playersPositions[i][j] == player)
+					break;
+				if(playersPositions[i][j] != null && playersPositions[i][j]!=player)
+					numberOfMatches ++;
+				if(playersPositions[i][j] == null)
+					notSelected = new Pair(i, j);
+			}
+			if(numberOfMatches == 2)
+				return notSelected;
+			notSelected = null;
+			numberOfMatches =0;
+		}
+		for(int i=0;i<3;i++){
+			for(int j=0;j<3;j++){
+				if(playersPositions[j][i] == player)
+					break;
+				if(playersPositions[j][i] != null && playersPositions[j][i]!=player)
+					numberOfMatches ++;
+				if(playersPositions[j][i] == null)
+					notSelected = new Pair(j, i);
+			}
+			if(numberOfMatches == 2)
+				return notSelected;
+			notSelected = null;
+			numberOfMatches =0;
+		}
+			
+		for(int i=0;i<3;i++){
+			if(playersPositions[i][i] == null)
+				notSelected = new Pair(i, i);
+			if(playersPositions[i][i] == player)
+				break;
+			if(playersPositions[i][i]!=null && playersPositions[i][i]!=player)
+				numberOfMatches++;
+		}
+			
+		if(numberOfMatches == 2)
+			return notSelected;
+		notSelected = null;
+		numberOfMatches =0;
+					
+		for(int i=0;i<3;i++){
+			if(playersPositions[i][2-i] == null)
+				notSelected = new Pair(i, i);
+			if(playersPositions[i][2-i] == player)
+				break;
+			if(playersPositions[i][2-i]!=null && playersPositions[i][2-i]!=player)
+				numberOfMatches++;
+		}
+			
+		if(numberOfMatches == 2)
+			return notSelected;
+
+		return null;
+	}
+	
+	@Test
+	public void testDontLetHimWin(){
+		//IBoard board = new Board();
+		IPlayer player = new Player();
+		this.selectPosition(player, 1, 1);
+		this.selectPosition(player, 0, 0);
+		IPair pair = otherPlayerWouldNotWinIfSelected(new Player());
+		Assert.assertEquals(pair.getKey(), 2);
+		Assert.assertEquals(pair.getValue(), 2);
 	}
 }

@@ -1,5 +1,10 @@
 package edu.luc.tictactoe.businesslogic.implementation;
 
+/***
+ * @author Akrem Osman
+ *
+ ***/
+
 public class TicTacToeWithComputer extends TicTacToePlay{
 
 	public TicTacToeWithComputer() {
@@ -26,6 +31,6 @@ public class TicTacToeWithComputer extends TicTacToePlay{
 	}
 	
 	private void computerMakeSelection(){
-		selectPosition(((Computer)playerTwo).selectPosition());
+		selectPosition(playerTwo, ((Computer)playerTwo).selectPosition());
 	}
 }

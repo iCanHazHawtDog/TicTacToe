@@ -1,4 +1,7 @@
 package edu.luc.tictactoe.businesslogic;
+
+import edu.luc.tictactoe.businesslogic.implementation.Computer;
+
 /**
  * 
  * @author Omo W
@@ -6,6 +9,6 @@ package edu.luc.tictactoe.businesslogic;
  */
 public interface ISelectionStrategy {
 
-	IPair<Integer, Integer> execute(IBoard board);
+	IPair<Integer, Integer> execute(Computer player);
 
 }

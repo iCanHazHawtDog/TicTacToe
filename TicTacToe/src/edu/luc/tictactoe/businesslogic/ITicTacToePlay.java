@@ -1,7 +1,7 @@
 package edu.luc.tictactoe.businesslogic;
 
 public interface ITicTacToePlay {
-	public void selectPosition(int i, int j);
+	public void selectPosition(IPlayer player, int i, int j);
 	public void setupPlayerOne(String name);
 	public void setupPlayerTwo(String name);
 	public void switchPlayer();

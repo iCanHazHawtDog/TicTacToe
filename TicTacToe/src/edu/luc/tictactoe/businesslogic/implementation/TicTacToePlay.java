@@ -114,37 +114,36 @@ public class TicTacToePlay implements ITicTacToePlay{
 	 * @param j
 	 * @return SelectionResult
 	 */
-	public void selectPosition(int i, int j){
-		board.selectPosition(playerTurn, i, j);
-		boolean won = board.checkWin(playerTurn);
-		
-		if(won){
-			playerOne.incrementNumberOfPlays();
-			playerTwo.incrementNumberOfPlays();
-			playerTurn.incrementNumberOfWins();
-			board.resetBoard();
-			UIChanges.DisplayResult(SelectionResult.Win, playerOne, playerTwo, playerTurn);
-			setNextTurnPlayer();
-		}
+	public void selectPosition(IPlayer player, int i, int j){
+		if(player == playerTurn){
+			board.selectPosition(playerTurn, i, j);
+			boolean won = board.checkWin(playerTurn);
 			
-		if(board.isFull()){
-			playerOne.incrementNumberOfPlays();
-			playerTwo.incrementNumberOfPlays();
-			board.resetBoard();
-			UIChanges.DisplayResult(SelectionResult.Draw, playerOne, playerTwo);
-			setNextTurnPlayer();
+			if(won){
+				playerOne.incrementNumberOfPlays();
+				playerTwo.incrementNumberOfPlays();
+				playerTurn.incrementNumberOfWins();
+				UIChanges.DisplayResult(SelectionResult.Win, playerOne, playerTwo, playerTurn);
+				board.resetBoard();
+				setNextTurnPlayer();
+			}
+				
+			if(board.isFull()){
+				playerOne.incrementNumberOfPlays();
+				playerTwo.incrementNumberOfPlays();
+				UIChanges.DisplayResult(SelectionResult.Draw, playerOne, playerTwo);
+				board.resetBoard();
+				setNextTurnPlayer();
+			}
+			
+			switchPlayer();
 		}
-		
-		switchPlayer();
 	}
 	
-	public void selectPosition(IPair<Integer, Integer> pair){
-		selectPosition(pair.getKey(), pair.getValue());
-		
+	public void selectPosition(IPlayer player, IPair<Integer, Integer> pair){
+		selectPosition(player, pair.getKey(), pair.getValue());
 	}
-	
-	
-	
+		
 	/**
 	 * Returns who's turn it is.
 	 * 
@@ -193,6 +192,4 @@ public class TicTacToePlay implements ITicTacToePlay{
 			return playerTwo;
 		return null;
 	}
-
-	
 }

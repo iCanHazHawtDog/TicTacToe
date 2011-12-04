@@ -31,6 +31,10 @@ public class Computer extends Player {
 	}
 	
 	public IPair<Integer, Integer> selectPosition(){
-		return selectionStrategy.execute(board);
+		return selectionStrategy.execute(this);
+	}
+	
+	public IBoard getBoard(){
+		return board;
 	}
 }
