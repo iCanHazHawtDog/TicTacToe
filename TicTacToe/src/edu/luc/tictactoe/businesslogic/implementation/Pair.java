@@ -4,7 +4,7 @@ package edu.luc.tictactoe.businesslogic.implementation;
  * @author Subhash Pant
  * Using pair instead of Map class
  */
-public class Pair<K, V>{
+public class Pair<K, V> implements IPair<K, V>{
 	private final K key;
 	private final V value;
 	private final int hash;
@@ -15,19 +15,35 @@ public class Pair<K, V>{
 		this.hash = key.hashCode() ^ value.hashCode();
 	}
 
+	/* (non-Javadoc)
+	 * @see edu.luc.tictactoe.businesslogic.implementation.IPair#getKey()
+	 */
+	@Override
 	public K getKey() {
 		return key;
 	}
 
+	/* (non-Javadoc)
+	 * @see edu.luc.tictactoe.businesslogic.implementation.IPair#getValue()
+	 */
+	@Override
 	public V getValue() {
 		return value;
 	}
 
+	/* (non-Javadoc)
+	 * @see edu.luc.tictactoe.businesslogic.implementation.IPair#getHash()
+	 */
+	@Override
 	public int getHash() {
 		return hash;
 	}
 	
 	
+	/* (non-Javadoc)
+	 * @see edu.luc.tictactoe.businesslogic.implementation.IPair#equals(java.lang.Object)
+	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public boolean equals(Object object)
 	{
@@ -45,6 +61,10 @@ public class Pair<K, V>{
 
 	
 	
+	/* (non-Javadoc)
+	 * @see edu.luc.tictactoe.businesslogic.implementation.IPair#toString()
+	 */
+	@Override
 	public String toString()
 	{
 		return key.toString() + " " + value.toString();

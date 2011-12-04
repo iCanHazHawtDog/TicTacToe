@@ -1,5 +1,6 @@
 package edu.luc.tictactoe.businesslogic.implementation;
 
+
 import java.util.Random;
 import edu.luc.tictactoe.businesslogic.IBoard;
 import edu.luc.tictactoe.businesslogic.IPlayer;
@@ -136,9 +137,12 @@ public class TicTacToePlay implements ITicTacToePlay{
 		switchPlayer();
 	}
 	
-	public void selectPosition(Pair<Integer, Integer> pair){
+	public void selectPosition(IPair<Integer, Integer> pair){
 		selectPosition(pair.getKey(), pair.getValue());
+		
 	}
+	
+	
 	
 	/**
 	 * Returns who's turn it is.

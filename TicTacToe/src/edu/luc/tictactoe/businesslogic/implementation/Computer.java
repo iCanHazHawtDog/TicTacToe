@@ -29,7 +29,7 @@ public class Computer extends Player {
 			this.selectionStrategy = new AdvancedSelection();
 	}
 	
-	public Pair<Integer, Integer> selectPosition(){
+	public IPair<Integer, Integer> selectPosition(){
 		return selectionStrategy.execute(board);
 	}
 }
