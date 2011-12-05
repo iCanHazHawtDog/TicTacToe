@@ -10,11 +10,14 @@ public class SmartSelection extends AbstractSelectionStrategy
 	@Override
 	public IPair<Integer, Integer> execute(Computer player) {
 		IPair<Integer, Integer> winPos = positionForWin(player);
+		if(winPos != null)
+			return winPos;
 		
 		IPair<Integer, Integer> position = otherPlayerWouldNotWinIfSelected(player);
-		if(position == null)
-			return randomSelect(player);
-		return position;
+		if(position != null)
+			return position;
+		
+		return super.randomSelect(player);
 	}
 
 }

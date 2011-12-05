@@ -34,6 +34,7 @@ public class Board implements IBoard {
 	 */
 	public Board(){
 		playersPositions = new IPlayer[3][3];
+		playersPositions[0][0] = null;
 		resetBoard();
 	}
 	
@@ -145,13 +146,13 @@ public class Board implements IBoard {
 		return counter;
 	}
 	
-	public ArrayList<IPair> NotSelectedPositions(){
+	public ArrayList<IPair<Integer, Integer>> NotSelectedPositions(){
 		//Map<Integer, Integer> positions = new HashMap<Integer, Integer>();
-		ArrayList positions = new ArrayList();
+		ArrayList<IPair<Integer, Integer>> positions = new ArrayList();
 		for(int i=0;i<3;i++)
 			for(int j=0;j<3;j++)
 				if(!isSelected(i, j))
-					positions.add(new Pair(i, j));
+					positions.add(new Pair<Integer, Integer>(i, j));
 			
 		return positions;
 	}
@@ -226,15 +227,29 @@ public class Board implements IBoard {
 		
 		int xMatches = 0;
 		int yMatches = 0;
+		int downDiagonalMatches = 0;
+		int upDiagonalMatches = 0;
+		
 		for(int i=0;i<3;i++){
 			if(playersPositions[position.getKey()][i] == player)
 				xMatches++;
-			if(playersPositions[i][position.getKey()] == player)
+			if(playersPositions[i][position.getValue()] == player)
 				yMatches++;
 		}
 				
 		if(xMatches == 2 || yMatches == 2)
 			return true;
+		
+		for(int i=0;i<3;i++){
+			if(playersPositions[i][i] == player)
+				downDiagonalMatches++;
+			if(playersPositions[i][2-i] == player)
+				upDiagonalMatches++;
+		}
+		
+		if(downDiagonalMatches == 2 || upDiagonalMatches == 2)
+			return true;
+		
 		return false;
 	}
 	
