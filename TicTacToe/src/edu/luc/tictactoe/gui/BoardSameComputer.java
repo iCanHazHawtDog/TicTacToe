@@ -42,6 +42,7 @@ public class BoardSameComputer extends JPanel{
 	public BoardSameComputer() {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setPreferredSize(new Dimension(1200, 800));
+		
 	}
 		
 	public void addComponentsToPane(Container pane) {
@@ -98,6 +99,8 @@ public class BoardSameComputer extends JPanel{
 		
 		gui.add(tiles);
 		pane.add(gui);
+		MainApplication.ticTacToePlay.canStartNow();
+		
     }
 
 

@@ -89,7 +89,7 @@ public class PlayGame extends JPanel{
     			matt.addComponentsToPane(BoardSameComputer.frame.getContentPane());
     			BoardSameComputer.frame.pack();
     			BoardSameComputer.frame.setVisible(true);
-    			MainApplication.ticTacToePlay.canStartNow();
+    			
             }
       	}));
         center.add(new JButton(new AbstractAction("Network Based") {
