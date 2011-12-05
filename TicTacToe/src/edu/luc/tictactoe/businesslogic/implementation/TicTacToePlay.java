@@ -10,8 +10,6 @@ import edu.luc.tictactoe.businesslogic.IPair;
 import edu.luc.tictactoe.businesslogic.IPlayer;
 import edu.luc.tictactoe.businesslogic.ITicTacToePlay;
 import edu.luc.tictactoe.dao.DBInteraction;
-import edu.luc.tictactoe.gui.controllerOLD.MainBoard;
-import edu.luc.tictactoe.networking.INetworking;
 
 /**
  * @author Akrem Osman
@@ -67,7 +65,7 @@ public class TicTacToePlay implements ITicTacToePlay{
 //		org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(edu.luc.tictactoe.gui.controllerOLD.TicTacToeUIApp.class).getContext().getResourceMap(MainBoard.class);
 		playerOne.setName(name);
 //		playerOne.setIcon(resourceMap.getIcon("xIcon.icon"));
-		ImageIcon icon = new ImageIcon("C:\\Users\\Akrem\\git\\TicTacToe\\TicTacToe\\Images\\ticTacToeXIcon.png");
+		ImageIcon icon = new ImageIcon("Images/TicTacToeXIcon.png");
 		playerOne.setIcon(icon);
 	}
 	
@@ -77,12 +75,9 @@ public class TicTacToePlay implements ITicTacToePlay{
 	 * @param name
 	 */
 	public void setupPlayerTwo(String name){
-//		org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(edu.luc.tictactoe.gui.controllerOLD.TicTacToeUIApp.class).getContext().getResourceMap(MainBoard.class);
-
 		playerTwo.setName(name);
-		ImageIcon icon = new ImageIcon("C:\\Users\\Akrem\\git\\TicTacToe\\TicTacToe\\Images\\ticTacToeOIcon.png");
-		playerOne.setIcon(icon);
-//		playerTwo.setIcon(resourceMap.getIcon("oIcon.icon"));
+		ImageIcon icon = new ImageIcon("Images/TicTacToeOIcon.png");
+		playerTwo.setIcon(icon);
 	}
 	
 	/**

@@ -29,8 +29,8 @@ public class MainMenu extends JPanel {
     public MainMenu() {
 		 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		 frame.setPreferredSize(new Dimension(500, 700));
-		// ImagePanel panel = new ImagePanel("C:\\Users\\Akrem\\git\\TicTacToe\\TicTacToe\\Images\\UIMM.png");
-		 //frame.setContentPane(panel);
+		 ImagePanel panel = new ImagePanel("images/UIMM.png");
+		 frame.setContentPane(panel);
     }
     
     public void addComponentsToPane(Container pane) {

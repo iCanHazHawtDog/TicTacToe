@@ -3,6 +3,7 @@ package edu.luc.tictactoe.gui;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,6 +17,8 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.AbstractAction;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
@@ -60,10 +63,9 @@ public class BoardSameComputer extends JPanel{
 		JLabel turn = new JLabel(MainApplication.ticTacToePlay.whoseTurn().getName().toUpperCase());
 		labels.add(turn);
 		labels.add(new JButton(new AbstractAction("Reset") {
-    		
-            @Override
+    		@Override
             public void actionPerformed(ActionEvent e) {
-          	  
+          	
             }
       	}));
 		labels.add(new JButton(new AbstractAction("Main Menu") {
@@ -79,71 +81,34 @@ public class BoardSameComputer extends JPanel{
 		
 		JPanel tiles = new JPanel();
 		tiles.setLayout(new GridLayout(3,3));
-		tiles.add(new JButton(new AbstractAction("") {
-    		
-            @Override
-            public void actionPerformed(ActionEvent e) {
-          	  
-            }
-      	}));
-		tiles.add(new JButton(new AbstractAction("") {
-    		
-            @Override
-            public void actionPerformed(ActionEvent e) {
-          	  
-            }
-      	}));
-		tiles.add(new JButton(new AbstractAction("") {
-    		
-            @Override
-            public void actionPerformed(ActionEvent e) {
-          	  
-            }
-      	}));
-		tiles.add(new JButton(new AbstractAction("") {
-    		
-            @Override
-            public void actionPerformed(ActionEvent e) {
-          	  
-            }
-      	}));
-		tiles.add(new JButton(new AbstractAction("") {
-    		
-            @Override
-            public void actionPerformed(ActionEvent e) {
-          	  
-            }
-      	}));
-		tiles.add(new JButton(new AbstractAction("") {
-    		
-            @Override
-            public void actionPerformed(ActionEvent e) {
-          	  
-            }
-      	}));
-		tiles.add(new JButton(new AbstractAction("") {
-    		
-            @Override
-            public void actionPerformed(ActionEvent e) {
-          	  
-            }
-      	}));
-		tiles.add(new JButton(new AbstractAction("") {
-    		
-            @Override
-            public void actionPerformed(ActionEvent e) {
-          	  
-            }
-      	}));
-		tiles.add(new JButton(new AbstractAction("") {
-    		
-            @Override
-            public void actionPerformed(ActionEvent e) {
-          	  
-            }
-      	}));
+		
+		tiles.add(createTTTButton(0, 0));
+		tiles.add(createTTTButton(0, 1));
+		tiles.add(createTTTButton(0, 2));
+		tiles.add(createTTTButton(1, 0));
+		tiles.add(createTTTButton(1, 1));
+		tiles.add(createTTTButton(1, 2));
+		tiles.add(createTTTButton(2, 0));
+		tiles.add(createTTTButton(2, 1));
+		tiles.add(createTTTButton(2, 2));
+		
 		gui.add(tiles);
 		pane.add(gui);
     }
-    
+
+
+	private JButton createTTTButton(final int i, final int j) {
+		JButton btn0 = new JButton();
+		btn0.addActionListener( new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JButton source = (JButton)e.getSource();
+				source.setIcon(MainApplication.ticTacToePlay.whoseTurn().getIcon());
+				source.setEnabled(false);
+				MainApplication.ticTacToePlay.selectPosition(MainApplication.ticTacToePlay.whoseTurn(), i, j);				
+			}
+		});
+		return btn0;
+	}
 }
