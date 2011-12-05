@@ -83,7 +83,7 @@ public class BoardNetworking extends JPanel{
 		JLabel x = new JLabel(player1Name+ " is X");
 		JLabel o = new JLabel(player2Name+ " is O");
 		labels.add(new JLabel(""));
-		labels.add(numberOfPlays);
+//		labels.add(numberOfPlays);
 		labels.add(x);
 		labels.add(o);
 
@@ -91,15 +91,18 @@ public class BoardNetworking extends JPanel{
     		labels.add(new JLabel(""));
     	}
 		turn= new JLabel("Testing1234");
-		labels.add(turn);
-		labels.add(new JButton(new AbstractAction("Reset") {
-    		@Override
-            public void actionPerformed(ActionEvent e) {
-    			
-    			resetBoard();
-    			
-            }
-      	}));
+//		labels.add(turn);
+//		labels.add(new JButton(new AbstractAction("Reset") {
+//    		@Override
+//            public void actionPerformed(ActionEvent e) {
+//    			
+//    			resetBoard();
+//    			
+//            }
+//      	}));
+		labels.add(new JLabel(""));
+		labels.add(new JLabel(""));
+		labels.add(new JLabel(""));
 		labels.add(new JButton(new AbstractAction("Main Menu") {
     		
             @Override
