@@ -23,6 +23,7 @@ import javax.swing.border.EmptyBorder;
 
 import edu.luc.tictactoe.businesslogic.implementation.Factory;
 import edu.luc.tictactoe.businesslogic.implementation.GameType;
+import edu.luc.tictactoe.businesslogic.implementation.UIChanges;
 import edu.luc.tictactoe.gui.resources.ImagePanel;
 
 /**
@@ -88,6 +89,11 @@ public class WinResultWindow extends JPanel {
     }
     
     public void Dispose(){
-    	BoardSameComputer.frame.setEnabled(true);
+    	if(MainApplication.ticTacToePlay.whoseTurn() == MainApplication.ticTacToePlay.getPlayerTwo()){
+    		BoardSameComputer.frame.setEnabled(false);
+    		MainApplication.ticTacToePlay.computerMakeSelection();
+    		return;
+    	}
+    	else BoardSameComputer.frame.setEnabled(true);
     }
 }

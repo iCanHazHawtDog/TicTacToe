@@ -63,12 +63,12 @@ public class BoardNetworking extends JPanel{
 	public void setPlayerIcons(){
 		if(player1Name.equals(yourName)){
 			isPlayer1=true;
-			player1Icon= new ImageIcon(getClass().getResource("Images/TicTacToeXIcon.png"));
-			player2Icon= new ImageIcon(getClass().getResource("Images/TicTacToeOIcon.png"));
+			player1Icon= new ImageIcon(this.getClass().getClassLoader().getResource("edu/luc/tictactoe/gui/resources/images/TicTacToeXIcon.png"));
+			player2Icon= new ImageIcon(this.getClass().getClassLoader().getResource("edu/luc/tictactoe/gui/resources/images/TicTacToeOIcon.png"));
 		}else{
 			isPlayer1=false;
-			player2Icon= new ImageIcon(getClass().getResource("Images/TicTacToeOIcon.png"));
-			player1Icon= new ImageIcon(getClass().getResource("Images/TicTacToeXIcon.png"));
+			player2Icon= new ImageIcon(this.getClass().getClassLoader().getResource("edu/luc/tictactoe/gui/resources/images/TicTacToeOIcon.png"));
+			player1Icon= new ImageIcon(this.getClass().getClassLoader().getResource("edu/luc/tictactoe/gui/resources/images/TicTacToeXIcon.png"));
 		}
 		
 	}

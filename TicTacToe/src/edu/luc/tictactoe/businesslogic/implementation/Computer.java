@@ -24,9 +24,7 @@ public class Computer extends Player {
 	public void setSelectionStrategy(DifficultyLevel difficultyLevel){
 		if(difficultyLevel == DifficultyLevel.Easy)
 			this.selectionStrategy = new RandomSelection();
-		if(difficultyLevel == DifficultyLevel.Hard)
-			this.selectionStrategy = new SmartSelection();
-		else
+		else 
 			this.selectionStrategy = new AdvancedSelection();
 	}
 	

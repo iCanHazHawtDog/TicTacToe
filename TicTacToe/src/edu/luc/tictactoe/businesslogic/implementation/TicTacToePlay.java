@@ -10,6 +10,7 @@ import edu.luc.tictactoe.businesslogic.IPair;
 import edu.luc.tictactoe.businesslogic.IPlayer;
 import edu.luc.tictactoe.businesslogic.ITicTacToePlay;
 import edu.luc.tictactoe.dao.DBInteraction;
+import edu.luc.tictactoe.gui.MainApplication;
 
 /**
  * @author Akrem Osman
@@ -62,10 +63,8 @@ public class TicTacToePlay implements ITicTacToePlay{
 	 * @param name
 	 */
 	public void setupPlayerOne(String name){
-//		org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(edu.luc.tictactoe.gui.controllerOLD.TicTacToeUIApp.class).getContext().getResourceMap(MainBoard.class);
 		playerOne.setName(name);
-//		playerOne.setIcon(resourceMap.getIcon("xIcon.icon"));
-		ImageIcon icon = new ImageIcon(this.getClass().getClassLoader().getResource("/TicTacToe/src/edu/luc/tictactoe/gui/Images/TicTacToeXIcon.png").getPath());
+		ImageIcon icon = new ImageIcon(this.getClass().getClassLoader().getResource("edu/luc/tictactoe/gui/resources/images/TicTacToeXIcon.png"));
 		playerOne.setIcon(icon);
 	}
 	
@@ -76,7 +75,7 @@ public class TicTacToePlay implements ITicTacToePlay{
 	 */
 	public void setupPlayerTwo(String name){
 		playerTwo.setName(name);
-		ImageIcon icon = new ImageIcon(this.getClass().getClassLoader().getResource("/TicTacToe/src/edu/luc/tictactoe/gui/resources/images/TicTacToeOIcon.png").getPath());
+		ImageIcon icon = new ImageIcon(this.getClass().getClassLoader().getResource("edu/luc/tictactoe/gui/resources/images/TicTacToeOIcon.png"));
 		playerTwo.setIcon(icon);
 	}
 	
@@ -103,9 +102,8 @@ public class TicTacToePlay implements ITicTacToePlay{
 	 * 
 	 */
 	public void setNextTurnPlayer(){
-		IPlayer tempPlayer = playerTurn;
 		playerTurn = nextPlayerTurn;
-		nextPlayerTurn = tempPlayer;
+		nextPlayerTurn = (playerTurn.equals(playerOne)) ? playerTwo : playerOne;
 	}
 	
 	/**
@@ -126,19 +124,19 @@ public class TicTacToePlay implements ITicTacToePlay{
 				playerTwo.incrementNumberOfPlays();
 				playerTurn.incrementNumberOfWins();
 				winner = playerTurn;
-				UIChanges.DisplayResult();
-				board.resetBoard();
-				winner = null;
 				setNextTurnPlayer();
+				board.resetBoard();
+				UIChanges.DisplayResult();
+				winner = null;
 				return;
 			}
 				
 			if(board.isFull()){
 				playerOne.incrementNumberOfPlays();
 				playerTwo.incrementNumberOfPlays();
-				UIChanges.DisplayResult();
-				board.resetBoard();
 				setNextTurnPlayer();
+				board.resetBoard();
+				UIChanges.DisplayResult();
 				return;
 			}
 			
@@ -206,7 +204,14 @@ public class TicTacToePlay implements ITicTacToePlay{
 		return null;
 	}
 	
-	public void canStartNow(){
+	@Override
+	public void computerMakeSelection() {
+		// TODO Auto-generated method stub
+		
+	}
 	
+	@Override
+	public void setDifficultyLevel(DifficultyLevel difficultyLevel){
+		
 	}
 }

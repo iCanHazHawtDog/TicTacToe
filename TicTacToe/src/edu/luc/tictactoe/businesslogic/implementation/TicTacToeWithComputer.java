@@ -10,8 +10,6 @@ import edu.luc.tictactoe.gui.BoardSameComputer;
  ***/
 
 public class TicTacToeWithComputer extends TicTacToePlay{
-
-	public boolean canStartGame = false;
 	
 	public TicTacToeWithComputer() {
 		board = new Board();
@@ -20,12 +18,19 @@ public class TicTacToeWithComputer extends TicTacToePlay{
 		// to set the name and icon for the computer player
 		setupPlayerTwo("Computer");
 		randomStart();
-		if(playerTurn == playerTwo)
-			computerMakeSelection();
 	}
 		
+	@Override
 	public void setDifficultyLevel(DifficultyLevel difficultyLevel){
 		((Computer)playerTwo).setSelectionStrategy(difficultyLevel);
+	}
+	
+	@Override
+	public void setupPlayerOne(String name){
+		super.setupPlayerOne(name);
+		if(playerTurn == playerTwo)
+			computerMakeSelection();
+		UIChanges.ticTacToeReady();
 	}
 	
 	@Override
@@ -37,24 +42,15 @@ public class TicTacToeWithComputer extends TicTacToePlay{
 			
 	}
 	
-	private void computerMakeSelection(){
-		if(canStartGame){
-			UIChanges.computerStartSelection();
-			IPair<Integer, Integer> compSelection = ((Computer)playerTwo).selectPosition();
-			selectPosition(playerTwo, compSelection);
-			UIChanges.computerAfterSelection(compSelection.getKey(), compSelection.getValue());
-		}
-	}
-	
 	@Override
 	public void setNextTurnPlayer(){
-		super.setNextTurnPlayer();
-		if(playerTurn == playerTwo)
-			computerMakeSelection();
+		playerTurn = playerOne;
 	}
 	
-	@Override
-	public void canStartNow(){
-		canStartGame = true;
+	public void computerMakeSelection(){
+		UIChanges.computerStartSelection();
+		IPair<Integer, Integer> compSelection = ((Computer)playerTwo).selectPosition();
+		selectPosition(playerTwo, compSelection);
+		UIChanges.computerAfterSelection(compSelection.getKey(), compSelection.getValue());
 	}
 }

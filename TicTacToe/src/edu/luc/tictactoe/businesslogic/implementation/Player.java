@@ -54,7 +54,7 @@ public  class Player implements IPlayer {
 	 * @return String - the player name
 	 */	
 	public String getName() {
-		return this.playername;
+		return this.playername.toUpperCase();
 	}
 	
 	

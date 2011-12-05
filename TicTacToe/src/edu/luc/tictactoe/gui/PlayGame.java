@@ -70,12 +70,12 @@ public class PlayGame extends JPanel{
     		
             @Override
             public void actionPerformed(ActionEvent e) {
+            	MainApplication.ticTacToePlay = Factory.CreateTicTacToePlay(GameType.WithAnotherPersonInSameComputer);
             	frame.setVisible(false);
     			HumanPlayerTwoWindow matt = new HumanPlayerTwoWindow();
     			matt.addComponentsToPane(HumanPlayerTwoWindow.frame.getContentPane());
     			HumanPlayerTwoWindow.frame.pack();
     			HumanPlayerTwoWindow.frame.setVisible(true);
-    			MainApplication.ticTacToePlay = Factory.CreateTicTacToePlay(GameType.WithAnotherPersonInSameComputer);
     			MainApplication.ticTacToePlay.setupPlayerOne(text.getText());
             }
       	}));
@@ -83,13 +83,14 @@ public class PlayGame extends JPanel{
     		
             @Override
             public void actionPerformed(ActionEvent e) {
-            	frame.setVisible(false);
             	MainApplication.ticTacToePlay = Factory.CreateTicTacToePlay(GameType.WithComputer);
-    			MainApplication.ticTacToePlay.setupPlayerOne(text.getText());
-    			BoardSameComputer matt = new BoardSameComputer();
+            	frame.setVisible(false);
+            	BoardSameComputer matt = new BoardSameComputer();
     			matt.addComponentsToPane(BoardSameComputer.frame.getContentPane());
     			BoardSameComputer.frame.pack();
     			BoardSameComputer.frame.setVisible(true);
+    			MainApplication.ticTacToePlay.setupPlayerOne(text.getText());
+    			
     			
             }
       	}));

@@ -7,6 +7,7 @@ package edu.luc.tictactoe.businesslogic.implementation;
  */
 import edu.luc.tictactoe.businesslogic.IPlayer;
 import edu.luc.tictactoe.gui.BoardSameComputer;
+import edu.luc.tictactoe.gui.MainApplication;
 import edu.luc.tictactoe.gui.MainMenu;
 import edu.luc.tictactoe.gui.WinResultWindow;
 
@@ -30,6 +31,7 @@ public class UIChanges {
 		
 	}
 	
-	
-	
+	public static void ticTacToeReady(){
+		BoardSameComputer.updateTurn();
+	}
 }

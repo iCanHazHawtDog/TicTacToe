@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URL;
 
 import javax.imageio.ImageIO;
 import javax.swing.JLabel;
@@ -23,12 +24,10 @@ public class ImagePanel extends JPanel {
 
     BufferedImage img;
 
-    public ImagePanel(String name) {
-        super(true);
-        this.setToolTipText(name);
-        this.add(new JLabel(name));
+    public ImagePanel(URL url) {
+        this.setToolTipText(url.toString());
         try {
-            img = ImageIO.read(new File(name));
+            img = ImageIO.read(url);
             this.setPreferredSize(new Dimension(
                 img.getWidth(), img.getHeight()));
         } catch (FileNotFoundException e) {
