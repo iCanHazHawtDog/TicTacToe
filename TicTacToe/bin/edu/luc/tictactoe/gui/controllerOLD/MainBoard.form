@@ -1,0 +1,386 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="name" type="java.lang.String" value="Form" noResource="true"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jPanel3" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jPanel3" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder/>
+          </Border>
+        </Property>
+        <Property name="name" type="java.lang.String" value="jPanel1" noResource="true"/>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="player1Label" min="-2" max="-2" attributes="0"/>
+                              <Component id="player2Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="player1WinsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="player2WinsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="player1WinCount" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="player2WinsCount" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="302" max="32767" attributes="0"/>
+                          <Component id="jPanel2" min="-2" pref="390" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="currentTurnLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="currentTurnPlayerLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="397" max="-2" attributes="0"/>
+                          <Component id="pauseBtn" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="resetBtn" pref="88" max="32767" attributes="1"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="mainMenuBtn" min="-2" max="-2" attributes="1"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jPanel2" pref="390" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="mainMenuBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="resetBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="pauseBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  <Component id="player1Label" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                  <Component id="player2Label" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="player1WinCount" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="player2WinsCount" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="player1WinsLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="player2WinsLabel" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="163" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="currentTurnLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="currentTurnPlayerLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="mainMenuBtn">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="mainMenuBtn.text"/>
+            <Property name="name" type="java.lang.String" value="mainMenuBtn" noResource="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mainMenuBtnMouseReleased"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="resetBtn">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="resetBtn.text"/>
+            <Property name="name" type="java.lang.String" value="resetBtn" noResource="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="resetBtnMouseReleased"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="pauseBtn">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="pauseBtn.text"/>
+            <Property name="name" type="java.lang.String" value="pauseBtn" noResource="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pauseBtnMouseReleased"/>
+          </Events>
+        </Component>
+        <Container class="javax.swing.JPanel" name="jPanel2">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="jPanel2" noResource="true"/>
+          </Properties>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+            <Property name="columns" type="int" value="3"/>
+            <Property name="rows" type="int" value="3"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JButton" name="grid0Btn">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" resourceKey="grid0Btn.icon"/>
+                <Property name="text" type="java.lang.String" resourceKey="grid0Btn.text"/>
+                <Property name="name" type="java.lang.String" value="grid0Btn" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="grid0BtnMouseReleased"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="grid1Btn">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="grid1Btn.text"/>
+                <Property name="name" type="java.lang.String" value="grid1Btn" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="grid1BtnMouseReleased"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="grid2Btn">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="grid2Btn.text"/>
+                <Property name="name" type="java.lang.String" value="grid2Btn" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="grid2BtnMouseReleased"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="grid3Btn">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="grid3Btn.text"/>
+                <Property name="name" type="java.lang.String" value="grid3Btn" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="grid3BtnMouseReleased"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="grid4Btn">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="grid4Btn.text"/>
+                <Property name="name" type="java.lang.String" value="grid4Btn" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="grid4BtnMouseReleased"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="grid5Btn">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="grid5Btn.text"/>
+                <Property name="name" type="java.lang.String" value="grid5Btn" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="grid5BtnMouseReleased"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="grid6Btn">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="grid6Btn.text"/>
+                <Property name="name" type="java.lang.String" value="grid6Btn" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="grid6BtnMouseReleased"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="grid7Btn">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="grid7Btn.text"/>
+                <Property name="name" type="java.lang.String" value="grid7Btn" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="grid7BtnMouseReleased"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="grid8Btn">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="grid8Btn.text"/>
+                <Property name="name" type="java.lang.String" value="grid8Btn" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="grid8BtnMouseReleased"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="player1Label">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="player1Label.text"/>
+            <Property name="name" type="java.lang.String" value="player1Label" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="player2Label">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="player2Label.text"/>
+            <Property name="name" type="java.lang.String" value="player2Label" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="player1WinsLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="player1WinsLabel.text"/>
+            <Property name="name" type="java.lang.String" value="player1WinsLabel" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="player1WinCount">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="player1WinCount.text"/>
+            <Property name="name" type="java.lang.String" value="player1WinCount" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="player2WinsLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="player2WinsLabel.text"/>
+            <Property name="name" type="java.lang.String" value="player2WinsLabel" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="player2WinsCount">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="player2WinsCount.text"/>
+            <Property name="name" type="java.lang.String" value="player2WinsCount" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="currentTurnLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="currentTurnLabel.text"/>
+            <Property name="name" type="java.lang.String" value="currentTurnLabel" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="currentTurnPlayerLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="currentTurnPlayerLabel.text"/>
+            <Property name="name" type="java.lang.String" value="currentTurnPlayerLabel" noResource="true"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel3">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="jPanel3" noResource="true"/>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="331" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="344" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="resumeGameBtn" alignment="0" max="32767" attributes="1"/>
+                              <Component id="mainMenuPauseBtn" alignment="0" max="32767" attributes="1"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="349" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                  <Component id="resumeGameBtn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="mainMenuPauseBtn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="175" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="jLabel1.text"/>
+            <Property name="name" type="java.lang.String" value="jLabel1" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="resumeGameBtn">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="resumeGameBtn.text"/>
+            <Property name="name" type="java.lang.String" value="resumeGameBtn" noResource="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="resumeGameBtnMouseReleased"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="mainMenuPauseBtn">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="mainMenuPauseBtn.text"/>
+            <Property name="name" type="java.lang.String" value="mainMenuPauseBtn" noResource="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mainMenuPauseBtnMouseReleased"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
