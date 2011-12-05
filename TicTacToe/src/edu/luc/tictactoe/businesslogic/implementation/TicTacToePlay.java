@@ -65,7 +65,7 @@ public class TicTacToePlay implements ITicTacToePlay{
 //		org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(edu.luc.tictactoe.gui.controllerOLD.TicTacToeUIApp.class).getContext().getResourceMap(MainBoard.class);
 		playerOne.setName(name);
 //		playerOne.setIcon(resourceMap.getIcon("xIcon.icon"));
-		ImageIcon icon = new ImageIcon("Images/TicTacToeXIcon.png");
+		ImageIcon icon = new ImageIcon(this.getClass().getClassLoader().getResource("/TicTacToe/src/edu/luc/tictactoe/gui/Images/TicTacToeXIcon.png").getPath());
 		playerOne.setIcon(icon);
 	}
 	
@@ -76,7 +76,7 @@ public class TicTacToePlay implements ITicTacToePlay{
 	 */
 	public void setupPlayerTwo(String name){
 		playerTwo.setName(name);
-		ImageIcon icon = new ImageIcon("Images/TicTacToeOIcon.png");
+		ImageIcon icon = new ImageIcon(this.getClass().getClassLoader().getResource("/TicTacToe/src/edu/luc/tictactoe/gui/resources/images/TicTacToeOIcon.png").getPath());
 		playerTwo.setIcon(icon);
 	}
 	

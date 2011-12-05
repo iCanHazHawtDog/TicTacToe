@@ -29,7 +29,7 @@ public class MainMenu extends JPanel {
     public MainMenu() {
 		 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		 frame.setPreferredSize(new Dimension(500, 700));
-		 ImagePanel panel = new ImagePanel("images/UIMM.png");
+		 ImagePanel panel = new ImagePanel(this.getClass().getResource("UIMM.png").getPath());
 		 frame.setContentPane(panel);
     }
     
