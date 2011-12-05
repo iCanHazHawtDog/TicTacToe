@@ -11,7 +11,7 @@ import edu.luc.tictactoe.application.MainApplication;
 import edu.luc.tictactoe.businesslogic.IPlayer;
 import edu.luc.tictactoe.businesslogic.implementation.Person;
 import edu.luc.tictactoe.businesslogic.implementation.TicTacToePlay;
-import edu.luc.tictactoe.gui.controller.NetworkUIBridge;
+import edu.luc.tictactoe.gui.controllerOLD.NetworkUIBridge;
 
 /***
  * 

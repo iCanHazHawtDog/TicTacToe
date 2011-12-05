@@ -3,7 +3,7 @@ package edu.luc.tictactoe.application;
 import edu.luc.tictactoe.businesslogic.ITicTacToePlay;
 import edu.luc.tictactoe.businesslogic.implementation.TicTacToePlay;
 
-import edu.luc.tictactoe.gui.controller.TicTacToeUIApp;
+import edu.luc.tictactoe.gui.controllerOLD.TicTacToeUIApp;
 
 public class MainApplication {
 

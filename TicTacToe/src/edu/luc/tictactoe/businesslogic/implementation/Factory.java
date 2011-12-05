@@ -14,7 +14,6 @@ public class Factory {
 	 * @return Class to initialize
 	 */
 	public static ITicTacToePlay CreateTicTacToePlay(GameType gameType)
-		throws IOException, ClassNotFoundException
 	{
 		if(gameType == GameType.WithAnotherPersonInSameComputer)
 			return new TicTacToePlay();
@@ -22,6 +21,6 @@ public class Factory {
 			return new TicTacToeWithComputer();
 		if(gameType == GameType.WithAnotherPersonInNetwork)
 			return new TicTacToeNetworking();
-		return null;
+		return new TicTacToePlay();
 	}
 }

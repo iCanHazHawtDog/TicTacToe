@@ -9,6 +9,6 @@ public interface ITicTacToePlay {
 	public IPlayer getPlayerOne();
 	public IPlayer getPlayerTwo();
 	public IPlayer whoseTurn();
-	public void resetBoard();
+	public void resetGame();
 	public void registerPlayers();
 }

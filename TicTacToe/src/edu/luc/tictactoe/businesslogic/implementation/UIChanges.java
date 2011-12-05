@@ -19,4 +19,6 @@ public class UIChanges {
 		//This class displays results when the draw happens
 		DisplayResult(result, playerOne, playerTwo, null);
 	}
+	
+	
 }
