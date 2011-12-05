@@ -24,6 +24,8 @@ import javax.swing.AbstractAction;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
 
+import edu.luc.tictactoe.networking.ClientMessages;
+
 
 /**
  * @author matt
@@ -31,17 +33,43 @@ import javax.swing.border.EmptyBorder;
  */
 
 @SuppressWarnings("serial")
-public class BoardSameComputer extends JPanel{
+public class BoardNetworking extends JPanel{
 	
 	public static JFrame frame = new JFrame();
 	static JFrame frame2 = new JFrame();
 	JTextField text = new JTextField(18);
 	JLabel turn;
+	private String player1Name;
+	private String player2Name;
+	private ClientMessages clientMessage;
+	private String yourName;
+	private static ImageIcon player1Icon;
+	private static ImageIcon player2Icon;
+	private static boolean isPlayer1=false;
+	
 	static JLabel numberOfPlays;
 		
-	public BoardSameComputer() {
+	public BoardNetworking(String player1Name, String player2Name, String yourName) {
+		this.player1Name=player1Name;
+		this.player2Name=player2Name;
+		this.yourName= yourName;
+		setPlayerIcons();
+		clientMessage= new ClientMessages();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setPreferredSize(new Dimension(1200, 800));
+		
+	}
+	
+	public void setPlayerIcons(){
+		if(player1Name.equals(yourName)){
+			isPlayer1=true;
+			player1Icon= new ImageIcon("Images/TicTacToeXIcon.png");
+			player2Icon= new ImageIcon("Images/TicTacToeOIcon.png");
+		}else{
+			isPlayer1=false;
+			player2Icon= new ImageIcon("Images/TicTacToeOIcon.png");
+			player1Icon= new ImageIcon("Images/TicTacToeXIcon.png");
+		}
 		
 	}
 		
@@ -51,19 +79,18 @@ public class BoardSameComputer extends JPanel{
         gui.setLayout(new GridLayout(1,2, 5, 5));
 		JPanel labels = new JPanel();
 		labels.setLayout(new GridLayout(10,1));
-		//pane.setLayout(new BoxLayout(pane, BoxLayout.X_AXIS));
-		numberOfPlays = new JLabel("Number of games played: " + MainApplication.ticTacToePlay.getNumberOfPlays());
-		JLabel x = new JLabel(MainApplication.ticTacToePlay.getPlayerOne().getName().toUpperCase() + " is X");
-		JLabel o = new JLabel(MainApplication.ticTacToePlay.getPlayerTwo().getName().toUpperCase() + " is O");
+		numberOfPlays= new JLabel("Hello");
+		JLabel x = new JLabel(player1Name+ " is X");
+		JLabel o = new JLabel(player2Name+ " is O");
 		labels.add(new JLabel(""));
 		labels.add(numberOfPlays);
 		labels.add(x);
 		labels.add(o);
-//		playerName.setAlignmentX(Component.CENTER_ALIGNMENT);
+
 		for (int i = 1; i < 2; i++ ){
     		labels.add(new JLabel(""));
     	}
-		turn = new JLabel(MainApplication.ticTacToePlay.whoseTurn().getName().toUpperCase());
+		turn= new JLabel("Testing1234");
 		labels.add(turn);
 		labels.add(new JButton(new AbstractAction("Reset") {
     		@Override
@@ -99,7 +126,7 @@ public class BoardSameComputer extends JPanel{
 		
 		gui.add(tiles);
 		pane.add(gui);
-		MainApplication.ticTacToePlay.canStartNow();
+	
 		
     }
 
@@ -110,9 +137,17 @@ public class BoardSameComputer extends JPanel{
 		return i*3+j;
 	}
 	
+	
+	
 	public static void setButton(int i, int j){
 		buttons.get(getIndex(i,j)).setEnabled(false);
-		buttons.get(getIndex(i,j)).setIcon(MainApplication.ticTacToePlay.getPlayerTwo().getIcon());
+		if(isPlayer1){
+			buttons.get(getIndex(i,j)).setIcon(player2Icon);
+		}else{
+			buttons.get(getIndex(i,j)).setIcon(player1Icon);
+			
+		}
+		
 	}
 	
 	
@@ -124,9 +159,15 @@ public class BoardSameComputer extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JButton source = (JButton)e.getSource();
-				source.setIcon(MainApplication.ticTacToePlay.whoseTurn().getIcon());
+				if(isPlayer1){
+					source.setIcon(player1Icon);
+				}else{
+					source.setIcon(player2Icon);
+				}
+				
+				clientMessage.setPosition(i*3+j);
 				source.setEnabled(false);
-				MainApplication.ticTacToePlay.selectPosition(MainApplication.ticTacToePlay.whoseTurn(), i, j);
+				
 				updateTurn();
 			}
 		});
@@ -137,12 +178,12 @@ public class BoardSameComputer extends JPanel{
 		for(JButton b : buttons){
 			b.setEnabled(true);
 			b.setIcon(null);
-			numberOfPlays.setText("Number of games Played: " + MainApplication.ticTacToePlay.getNumberOfPlays());
+			//numberOfPlays.setText("Number of games Played: " + MainApplication.ticTacToePlay.getNumberOfPlays());
 		}
 	}
 	
 	public void updateTurn(){
-		turn.setText(MainApplication.ticTacToePlay.whoseTurn().getName().toUpperCase());
+	
 		
 	}
 	

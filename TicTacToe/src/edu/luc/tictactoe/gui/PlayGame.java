@@ -24,6 +24,7 @@ import javax.swing.border.EmptyBorder;
 import edu.luc.tictactoe.businesslogic.implementation.Factory;
 import edu.luc.tictactoe.businesslogic.implementation.GameType;
 import edu.luc.tictactoe.businesslogic.implementation.TicTacToeWithComputer;
+import edu.luc.tictactoe.networking.NetworkThreadHandling;
 
 
 /**
@@ -96,7 +97,23 @@ public class PlayGame extends JPanel{
     		
             @Override
             public void actionPerformed(ActionEvent e) {
-          	  
+            	//First we set up a thread that lets us talk with he server
+            	frame.setVisible(false);
+            	WaitingForConnectionWindow conWindow= new WaitingForConnectionWindow();
+            	conWindow.addComponentsToPane(WaitingForConnectionWindow.frame.getContentPane());
+            	String name= text.getText();
+            	NetworkThreadHandling networking= new NetworkThreadHandling(name);
+            	new Thread(networking).start();
+   
+            	WaitingForConnectionWindow.frame.pack();
+            	WaitingForConnectionWindow.frame.setVisible(true);
+            	
+            	
+            	
+            	
+            	
+            	
+            	
             }
       	}));
         center.add(new JButton(new AbstractAction("Main Menu") {
