@@ -130,6 +130,7 @@ public class TicTacToePlay implements ITicTacToePlay{
 				board.resetBoard();
 				winner = null;
 				setNextTurnPlayer();
+				return;
 			}
 				
 			if(board.isFull()){
@@ -138,6 +139,7 @@ public class TicTacToePlay implements ITicTacToePlay{
 				UIChanges.DisplayResult();
 				board.resetBoard();
 				setNextTurnPlayer();
+				return;
 			}
 			
 			switchPlayer();
@@ -202,5 +204,9 @@ public class TicTacToePlay implements ITicTacToePlay{
 		else if(playerTwo.getWins() > playerOne.getWins())
 			return playerTwo;
 		return null;
+	}
+	
+	public void canStartNow(){
+	
 	}
 }

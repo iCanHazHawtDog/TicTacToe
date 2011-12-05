@@ -4,6 +4,7 @@
 package edu.luc.tictactoe.gui;
 
 import javax.swing.Box;
+
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -22,6 +23,7 @@ import javax.swing.border.EmptyBorder;
 
 import edu.luc.tictactoe.businesslogic.implementation.Factory;
 import edu.luc.tictactoe.businesslogic.implementation.GameType;
+import edu.luc.tictactoe.businesslogic.implementation.TicTacToeWithComputer;
 
 
 /**
@@ -81,11 +83,13 @@ public class PlayGame extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
             	frame.setVisible(false);
+            	MainApplication.ticTacToePlay = Factory.CreateTicTacToePlay(GameType.WithComputer);
+    			MainApplication.ticTacToePlay.setupPlayerOne(text.getText());
     			BoardSameComputer matt = new BoardSameComputer();
     			matt.addComponentsToPane(BoardSameComputer.frame.getContentPane());
     			BoardSameComputer.frame.pack();
     			BoardSameComputer.frame.setVisible(true);
-    			MainApplication.ticTacToePlay = Factory.CreateTicTacToePlay(GameType.WithComputer);
+    			MainApplication.ticTacToePlay.canStartNow();
             }
       	}));
         center.add(new JButton(new AbstractAction("Network Based") {

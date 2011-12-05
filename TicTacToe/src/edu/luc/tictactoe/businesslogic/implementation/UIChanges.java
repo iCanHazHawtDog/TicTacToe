@@ -6,6 +6,7 @@ package edu.luc.tictactoe.businesslogic.implementation;
  * @Matt needs to complete this class
  */
 import edu.luc.tictactoe.businesslogic.IPlayer;
+import edu.luc.tictactoe.gui.BoardSameComputer;
 import edu.luc.tictactoe.gui.MainMenu;
 import edu.luc.tictactoe.gui.WinResultWindow;
 
@@ -16,6 +17,17 @@ public class UIChanges {
 	     matt.addComponentsToPane(WinResultWindow.frame.getContentPane());
 	     WinResultWindow.frame.pack();
 	     WinResultWindow.frame.setVisible(true);   
+	}
+	
+	public static void computerAfterSelection(int i, int j){
+		BoardSameComputer.setButton(i, j);
+		BoardSameComputer.enableButtons();
+		
+	}
+	
+	public static void computerStartSelection(){
+		BoardSameComputer.disableButtons();
+		
 	}
 	
 	

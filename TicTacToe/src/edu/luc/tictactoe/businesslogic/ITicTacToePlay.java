@@ -15,4 +15,5 @@ public interface ITicTacToePlay {
 	public void registerPlayers();
 	public IPlayer getWinner();
 	public int getNumberOfPlays();
+	public void canStartNow();
 }

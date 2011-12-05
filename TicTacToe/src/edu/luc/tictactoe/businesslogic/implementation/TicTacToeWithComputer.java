@@ -1,5 +1,9 @@
 package edu.luc.tictactoe.businesslogic.implementation;
 
+import edu.luc.tictactoe.businesslogic.IPair;
+import edu.luc.tictactoe.businesslogic.IPlayer;
+import edu.luc.tictactoe.gui.BoardSameComputer;
+
 /***
  * @author Akrem Osman
  *
@@ -7,6 +11,8 @@ package edu.luc.tictactoe.businesslogic.implementation;
 
 public class TicTacToeWithComputer extends TicTacToePlay{
 
+	public boolean canStartGame = false;
+	
 	public TicTacToeWithComputer() {
 		board = new Board();
 		playerOne = new Person();
@@ -28,9 +34,27 @@ public class TicTacToeWithComputer extends TicTacToePlay{
 		// if it's the computer turn, the computer needs to make a selection.
 		if(playerTurn == playerTwo)
 			computerMakeSelection();
+			
 	}
 	
 	private void computerMakeSelection(){
-		selectPosition(playerTwo, ((Computer)playerTwo).selectPosition());
+		if(canStartGame){
+			UIChanges.computerStartSelection();
+			IPair<Integer, Integer> compSelection = ((Computer)playerTwo).selectPosition();
+			selectPosition(playerTwo, compSelection);
+			UIChanges.computerAfterSelection(compSelection.getKey(), compSelection.getValue());
+		}
+	}
+	
+	@Override
+	public void setNextTurnPlayer(){
+		super.setNextTurnPlayer();
+		if(playerTurn == playerTwo)
+			computerMakeSelection();
+	}
+	
+	@Override
+	public void canStartNow(){
+		canStartGame = true;
 	}
 }
