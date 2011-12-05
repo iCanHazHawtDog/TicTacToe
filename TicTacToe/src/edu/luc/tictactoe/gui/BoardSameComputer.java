@@ -18,6 +18,7 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.AbstractAction;
 import javax.swing.border.BevelBorder;
@@ -33,6 +34,7 @@ import javax.swing.border.EmptyBorder;
 public class BoardSameComputer extends JPanel{
 	
 	static JFrame frame = new JFrame();
+	static JFrame frame2 = new JFrame();
 	JTextField text = new JTextField(18);
 	
 	
@@ -48,7 +50,7 @@ public class BoardSameComputer extends JPanel{
         gui.setLayout(new GridLayout(1,2, 5, 5));
 		JPanel labels = new JPanel();
 		labels.setLayout(new GridLayout(10,1));
-//		pane.setLayout(new BoxLayout(pane, BoxLayout.X_AXIS));
+		//pane.setLayout(new BoxLayout(pane, BoxLayout.X_AXIS));
 		JLabel numberOfPlays = new JLabel("Number of Plays: " + MainApplication.ticTacToePlay.getPlayerOne().getNumberOfPlays());
 		JLabel x = new JLabel(MainApplication.ticTacToePlay.getPlayerOne().getName().toUpperCase() + " is X");
 		JLabel o = new JLabel(MainApplication.ticTacToePlay.getPlayerTwo().getName().toUpperCase() + " is O");
@@ -65,7 +67,9 @@ public class BoardSameComputer extends JPanel{
 		labels.add(new JButton(new AbstractAction("Reset") {
     		@Override
             public void actionPerformed(ActionEvent e) {
-          	
+    			
+    			resetBoard();
+    			
             }
       	}));
 		labels.add(new JButton(new AbstractAction("Main Menu") {
@@ -97,8 +101,11 @@ public class BoardSameComputer extends JPanel{
     }
 
 
+	private ArrayList<JButton> buttons = new ArrayList<JButton>();
+	
 	private JButton createTTTButton(final int i, final int j) {
 		JButton btn0 = new JButton();
+		buttons.add(btn0);
 		btn0.addActionListener( new ActionListener(){
 
 			@Override
@@ -110,5 +117,12 @@ public class BoardSameComputer extends JPanel{
 			}
 		});
 		return btn0;
+	}
+	
+	private void resetBoard(){
+		for(JButton b : buttons){
+			b.setEnabled(true);
+			b.setIcon(null);			
+		}
 	}
 }
