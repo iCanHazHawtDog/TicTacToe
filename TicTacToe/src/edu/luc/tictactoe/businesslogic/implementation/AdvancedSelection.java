@@ -14,7 +14,7 @@ public class AdvancedSelection extends AbstractSelectionStrategy
 {
 	@Override
 	public IPair<Integer, Integer> execute(Computer player) {
-		IPair position = super.otherPlayerWouldNotWinIfSelected(player);
+		IPair<Integer, Integer> position = super.otherPlayerWouldNotWinIfSelected(player);
 		if(position == null)
 			return randomSelect(player);
 		return position;

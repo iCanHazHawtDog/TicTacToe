@@ -15,5 +15,6 @@ public interface IBoard {
 	public boolean checkWin(IPlayer player);
 	public boolean resetBoard();
 	public ArrayList<IPair> NotSelectedPositions();
-	public IPair otherPlayerWouldNotWinIfSelected(IPlayer player);
+	public IPair<Integer, Integer> otherPlayerWouldNotWinIfSelected(IPlayer player);
+	public boolean canWin(IPlayer player, IPair<Integer, Integer> position);
 }

@@ -17,7 +17,6 @@ public class MainApplication {
 	               createAndShowGUI();
 	            }
 	        });
-
 	}
 	
 	 private static void createAndShowGUI() {

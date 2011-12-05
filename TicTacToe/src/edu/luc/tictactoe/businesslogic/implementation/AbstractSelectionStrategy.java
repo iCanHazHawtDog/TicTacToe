@@ -25,4 +25,13 @@ public abstract class AbstractSelectionStrategy implements ISelectionStrategy
 	public IPair otherPlayerWouldNotWinIfSelected(Computer player){
 		return player.getBoard().otherPlayerWouldNotWinIfSelected(player);
 	}
+	
+	public IPair positionForWin(Computer player){
+		ArrayList<IPair> positions = player.getBoard().NotSelectedPositions();
+		for(IPair position : positions){
+			player.getBoard().canWin(player, position);
+				
+		}
+		return null;
+	}
 }

@@ -219,6 +219,31 @@ public class Board implements IBoard {
 		return null;
 	}
 	
+	public boolean canWin(IPlayer player, IPair<Integer, Integer> position){
+		
+		if(playersPositions[position.getKey()][position.getValue()] != null)
+			return false;
+		
+		int xMatches = 0;
+		int yMatches = 0;
+		for(int i=0;i<3;i++){
+			if(playersPositions[position.getKey()][i] == player)
+				xMatches++;
+			if(playersPositions[i][position.getKey()] == player)
+				yMatches++;
+		}
+				
+		if(xMatches == 2 || yMatches == 2)
+			return true;
+		return false;
+	}
+	
+	/*public boolean canWin(IPlayer player, int i){
+		for(int j=0;j<3;j++)
+			if(playersPositions[i][j] == player)
+				return && playersPositions[i][1] == player && playersPositions[i][2] == player)
+	}*/
+	
 	@Test
 	public void testDontLetHimWin(){
 		//IBoard board = new Board();

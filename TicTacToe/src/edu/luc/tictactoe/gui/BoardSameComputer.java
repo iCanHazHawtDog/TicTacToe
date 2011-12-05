@@ -101,7 +101,7 @@ public class BoardSameComputer extends JPanel{
     }
 
 
-	private ArrayList<JButton> buttons = new ArrayList<JButton>();
+	private static ArrayList<JButton> buttons = new ArrayList<JButton>();
 	
 	private JButton createTTTButton(final int i, final int j) {
 		JButton btn0 = new JButton();
@@ -119,7 +119,7 @@ public class BoardSameComputer extends JPanel{
 		return btn0;
 	}
 	
-	private void resetBoard(){
+	public static void resetBoard(){
 		for(JButton b : buttons){
 			b.setEnabled(true);
 			b.setIcon(null);			

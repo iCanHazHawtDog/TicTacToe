@@ -7,11 +7,14 @@ import edu.luc.tictactoe.businesslogic.ISelectionStrategy;
 
 public class SmartSelection extends AbstractSelectionStrategy
 {
-
 	@Override
 	public IPair<Integer, Integer> execute(Computer player) {
-		// TODO Auto-generated method stub
-		return null;
+		IPair<Integer, Integer> winPos = positionForWin(player);
+		
+		IPair<Integer, Integer> position = otherPlayerWouldNotWinIfSelected(player);
+		if(position == null)
+			return randomSelect(player);
+		return position;
 	}
 
 }

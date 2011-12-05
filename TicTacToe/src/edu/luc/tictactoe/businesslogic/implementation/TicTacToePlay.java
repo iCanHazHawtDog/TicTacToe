@@ -125,15 +125,17 @@ public class TicTacToePlay implements ITicTacToePlay{
 				playerOne.incrementNumberOfPlays();
 				playerTwo.incrementNumberOfPlays();
 				playerTurn.incrementNumberOfWins();
-				UIChanges.DisplayResult(SelectionResult.Win, playerOne, playerTwo, playerTurn);
+				winner = playerTurn;
+				UIChanges.DisplayResult();
 				board.resetBoard();
+				winner = null;
 				setNextTurnPlayer();
 			}
 				
 			if(board.isFull()){
 				playerOne.incrementNumberOfPlays();
 				playerTwo.incrementNumberOfPlays();
-				UIChanges.DisplayResult(SelectionResult.Draw, playerOne, playerTwo);
+				UIChanges.DisplayResult();
 				board.resetBoard();
 				setNextTurnPlayer();
 			}
@@ -144,6 +146,10 @@ public class TicTacToePlay implements ITicTacToePlay{
 	
 	public void selectPosition(IPlayer player, IPair<Integer, Integer> pair){
 		selectPosition(player, pair.getKey(), pair.getValue());
+	}
+	
+	public IPlayer getWinner(){
+		return winner;
 	}
 		
 	/**
@@ -174,6 +180,9 @@ public class TicTacToePlay implements ITicTacToePlay{
 		board.resetBoard();
 	}
 		
+	public int getNumberOfPlays(){
+		return playerOne.getNumberOfPlays();
+	}
 	/**
 	 * stores players (only person) scores to Database
 	 */
