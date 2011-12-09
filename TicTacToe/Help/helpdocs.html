@@ -10,18 +10,15 @@
 <li><a href="#main">Main Menu</a></li>
 <ul>
 <li><a href="#help">Access Help</a></li>
-<li><a href="#settings">Settings</a></li>
-<li><a href="#highscores">High Scores</a></li>
 <li><a href="#play">Play </a></li>
 <ul>
-<li><a href="#machine">On this Machine</a></li>
-<li><a href="#network">Network Based</a></li>
-<li><a href="#host">Host Machine</a></li>
-<li><a href="#join">Join Game</a></li>
-<li><a href="#pg">Play Game</a></li>
+<li><a href="#machineHuman">On this Machine Vs. Human</a></li>
+<li><a href="#machineAI">On this Machine Vs. AI</a></li>
+<li><a href="#net">Network Based</a></li>
+<li><a href="#pg">Play</a></li>
 <li><a href="#reset">Reset</a></li>
-<li><a href="#pause">Pause</a></li>
 </ul>
+<li><a href="#highscores">High Scores</a></li>
 <li><a href="#exit">Exit </a></li>
 </ul>
 <h2><a name="sysreq">System Requirements</a></h3>
@@ -41,29 +38,34 @@
 <left><img src= "./Resources/TicTacToeMainMenu.png" alt="TicTacToe Main"></left> 
 <h3><a name="help">Access Help</a></h3>
 <p>Help document can be accessed any time.</p>
-<h3><a name="settings">Settings</a></h3>
-<p>Settings provide the option of preference in terms of changing the game sound, player icon and maneuvering back to the main menu.</p>
-<p>Note: Changing sound and player icon functionality will be incorporated in Phase 2.</p>
 <h3><a name="highscores">High Scores</a></h3>
 <p>This screen gives users the list of TicTacToe high scorers.</p>
 <h3><a name="play">Play </a></h3>
-<p>Play button allows users to initialize the game. On its click, a second screen pops up which leads to initializing a two player game either 
-in the same computer or on a network. To proceed, a player name is required after which either of the options: <strong>On this Machine</strong> or
-<strong>Network Based </strong>must be chosen. Port number 6262 needs to be opened in the local firewall.</p>
+<p>Play button allows users to initialize the game. On its click, a second screen pops up which leads to initializing a two player game 
+either in the same computer, on the internet or a game played against the computer. To proceed, a player name is required after which 
+either of the options button is selected.</p>
 <left><img src= "./Resources/TicTacToePlayButt.png" alt="TicTacToe Play"></left> 
-<h4><a name="machine">On this Machine</a></h3>
-<p>Entering the player name and clicking on this menu allows you to enter two player's name and start playing the game.</p>
+<h4><a name="machine">On this Machine Vs. Human</a></h3>
+<p>Entering the player name and clicking on this button allows you to enter player two's name and start playing the game.</p>
 <left><img src= "./Resources/Player2.png" alt="TicTacToe player2"></left> 
+<h4><a name="machine">On this Machine Vs. AI</a></h3>
+<p>Entering the player name and clicking on this button allows you to start playing a game against the computer. In playing against the 
+computer, the difficulty level can be set to either easy, medium or hard. Also in the game, alternating player turns is specified with 
+a counter of wins for both human player and the computer as well as the total number of times the game is played since the game session 
+started. </p>
+<left><img src= "./Resources/TicTacToeAI.png" alt="TicTacToe AI"></left> 
 <h4><a name="network">Network Based</a></h3>
-<p>Clicking on this menu allows you to enter the person's name and act as a <strong>host machine</strong> or <strong>join a game</strong>.</p>
-<left><img src= "./Resources/HostMachine.png" alt="TicTacToe Network-Play"></left> 
-<h4><a name="host">Host Machine</a></h3>
-<p>Host machine allows you to host the game. If you choose this option, another player can connect to your computer and play on the game in host-guest architecture.</p>
-<left><img src= "./Resources/Hostgame.png" alt="TicTacToe Network-HostPlayer"></left>
-<h4><a name="join">Join Game</a></h3>
-<p>This option will allow you to join the game hosted by others. While you need the host’s player IP address and the default static port number which is 6262,
- you also have to enter your name as the second player in order to play the network game.</p>
-<h4><a name="pg">Play Game</a></h3>
+<p>Once the player name is specified and this option button is selected, a pop-up window is displayed.</p>
+<left><img src= "./Resources/ConnWait.png" alt="TicTacToe Network-Play"></left> 
+<p>The message in the window "Waiting for Connection..." means that it is currently in a wait state until 
+another person player on the Internet is interested in a networked game.</p>
+<p>If a networked player is found, the first-In person hosts the game. Once the game session starts, the number of game 
+rounds won is also counted for each player.</p>
+<p>At the end of the game, different messages are displayed to each player and the player hosting the game is expected to continue.</p>
+<left><img src= "./Resources/TicTacToeNetPlayer1.png" alt="TicTacToe Network host"></left> 
+<p>Pending the time the host player decides to continue the game, the message "Waiting for the first player to continue" is displayed to the second player.</p>
+<left><img src= "./Resources/TicTacToeNetPlayer2.png" alt="TicTacToe Network player2"></left> 
+<h4><a name="pg">Play </a></h3>
 <p>After the play board opens, the left top corner has information on the player names and their symbols (X or O), left bottom corner has information on player turn,
  and the right screen has the board. The players can play the game by clicking on the board cells during their turns only. </p>
  Note: For more detailed help needed in learning how to play the game, click on the <a href="http://en.wikipedia.org/wiki/Tic-tac-toe" target="_blank">Wikipedia link</a>, or watch the <a href="http://www.youtube.com/watch?v=uKswTe3iJ0U" target="_blank">YouTube  video</a>.
