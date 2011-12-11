@@ -1,4 +1,3 @@
-
 package edu.luc.tictactoe.gui;
 
 import javax.swing.Box;
@@ -35,7 +34,7 @@ import edu.luc.tictactoe.networking.ClientMessages;
 @SuppressWarnings("serial")
 public class BoardNetworking extends JPanel{
 	
-	public static JFrame frame = new JFrame();
+	public static JFrame frame = new JFrame("TicTacToe Board");
 	static JFrame frame2 = new JFrame();
 	JTextField text = new JTextField(18);
 	JLabel turn;
