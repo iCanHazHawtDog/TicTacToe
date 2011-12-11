@@ -1,4 +1,3 @@
-
 package edu.luc.tictactoe.gui;
 
 import javax.swing.Box;
@@ -42,7 +41,7 @@ import edu.luc.tictactoe.businesslogic.implementation.UIChanges;
 @SuppressWarnings("serial")
 public class BoardSameComputer extends JPanel{
 	
-	public static JFrame frame = new JFrame();
+	public static JFrame frame = new JFrame("TicTacToe Board");
 	static JFrame frame2 = new JFrame();
 	JTextField text = new JTextField(18);
 	static JLabel turn;
@@ -58,11 +57,13 @@ public class BoardSameComputer extends JPanel{
 		
 	public BoardSameComputer() {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setPreferredSize(new Dimension(1200, 800));
-		
+		frame.setPreferredSize(new Dimension(1200, 800));	
 	}
 		
 	public void addComponentsToPane(Container pane) {
+		pane.removeAll();
+		pane.validate();
+		pane.repaint();
 		JPanel gui = new JPanel(new BorderLayout());
         gui.setBorder(new BevelBorder(BevelBorder.RAISED));
         gui.setLayout(new GridLayout(1,2, 5, 5));
