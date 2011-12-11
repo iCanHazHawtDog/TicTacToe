@@ -1,4 +1,3 @@
-
 package edu.luc.tictactoe.gui;
 
 import javax.swing.BoxLayout;
@@ -45,7 +44,7 @@ public class NetworkWinResultsWindow extends JPanel {
     	this.win=win;
     	this.isDraw=isDraw;
     	this.isPlayer1=isPlayer1;
-    	frame= new JFrame();
+    	frame= new JFrame("Results");
     	BoardSameComputer.frame.setEnabled(false);
     	clientMessages=new ClientMessages();
     	
