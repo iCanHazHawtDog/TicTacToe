@@ -35,7 +35,7 @@ import edu.luc.tictactoe.networking.NetworkThreadHandling;
 @SuppressWarnings("serial")
 public class PlayGame extends JPanel{
 	
-	static JFrame frame = new JFrame();
+	static JFrame frame = new JFrame("Pick a Game Type");
 	JTextField text = new JTextField(18);
 	
 	public PlayGame() {
@@ -50,6 +50,10 @@ public class PlayGame extends JPanel{
 		Dimension prefSize = new Dimension(5, 25);
 		Dimension maxSize = new Dimension(Short.MAX_VALUE, 25);
 		pane.add(new Box.Filler(minSize, prefSize, maxSize));
+                  pane.removeAll();
+		pane.validate();
+		pane.repaint();
+
 		
 		JLabel playerName = new JLabel("Player Name");
 		playerName.setAlignmentX(Component.CENTER_ALIGNMENT);
