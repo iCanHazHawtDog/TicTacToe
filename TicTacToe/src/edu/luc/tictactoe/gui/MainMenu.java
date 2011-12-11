@@ -1,4 +1,3 @@
-
 package edu.luc.tictactoe.gui;
 
 import javax.swing.ImageIcon;
@@ -24,7 +23,7 @@ import edu.luc.tictactoe.gui.resources.ImagePanel;
 @SuppressWarnings("serial")
 public class MainMenu extends JPanel {
 
-	static JFrame frame = new JFrame();
+	static JFrame frame = new JFrame("TicTacToe Main Menu");
 	
     public MainMenu() {
 		 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
