@@ -36,7 +36,7 @@ import java.awt.event.MouseEvent;
  */
 public class HighScores {
 	
-	static JFrame frame = new JFrame();
+	static JFrame frame = new JFrame("Highscores");
 //	int numberOfHighScores = 10;
 //	Object[][] data = {
 //		    {"Kathy", "Smith"},
