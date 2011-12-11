@@ -1,4 +1,3 @@
-
 package edu.luc.tictactoe.gui;
 
 import javax.swing.JFrame;
@@ -15,7 +14,7 @@ import java.awt.GridLayout;
 @SuppressWarnings("serial")
 public class WaitingForConnectionWindow extends JPanel {
 
-	static JFrame frame = new JFrame();
+	static JFrame frame = new JFrame("Waiting for Connection");
 	
     public WaitingForConnectionWindow() {
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
