@@ -61,9 +61,6 @@ public class BoardSameComputer extends JPanel{
 	}
 		
 	public void addComponentsToPane(Container pane) {
-		pane.removeAll();
-		pane.validate();
-		pane.repaint();
 		JPanel gui = new JPanel(new BorderLayout());
         gui.setBorder(new BevelBorder(BevelBorder.RAISED));
         gui.setLayout(new GridLayout(1,2, 5, 5));
