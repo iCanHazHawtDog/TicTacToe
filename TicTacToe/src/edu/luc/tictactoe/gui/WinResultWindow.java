@@ -1,4 +1,3 @@
-
 package edu.luc.tictactoe.gui;
 
 import javax.swing.BoxLayout;
@@ -37,7 +36,7 @@ public class WinResultWindow extends JPanel {
 	private WindowAdapter windowAdapter=null;
 	
     public WinResultWindow() {
-    	frame= new JFrame();
+    	frame= new JFrame("Results");
     	BoardSameComputer.frame.setEnabled(false);
     	
 		// frame.setDefaultCloseOperation(JFrame.);
